@@ -13,132 +13,86 @@
 
 :root {
   --green:#7FC838;
-  --green-dark:#7FC838;
   --black:#0a0a0a;
   --white:#fff;
-  --gray:#666;
-  --light:#f7f8fa;
-  --border:#e5e7eb;
-  --text:#1a1a1a;
-  --text-secondary:#555;
+  --border:rgba(255,255,255,0.08);
 }
 
 body {
   font-family:'Inter', sans-serif;
   line-height:1.6;
-  color:var(--text);
-  background:var(--white);
+  color:#fff;
+  background:var(--black);
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
 
-.container {
-  max-width:860px;
-  margin:0 auto;
-  padding:0 20px;
-}
-
 /* SCROLL REVEAL */
-[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
 [data-reveal].visible{opacity:1;transform:none}
 
-/* HERO */
-.hero{background:var(--black);padding:88px 0 72px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse, rgba(127,200,56,0.08) 0%, transparent 60%);pointer-events:none}
-.hero .container{position:relative;z-index:1}
-.hero__badge{display:inline-flex;align-items:center;gap:10px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.25);color:var(--green);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:10px 24px;border-radius:30px;margin-bottom:32px}
-.hero__badge::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
-.hero h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;line-height:1.1;letter-spacing:-.035em;color:#fff;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--green)}
-.hero__sub{font-size:17px;color:#bbb;font-weight:500;max-width:640px;margin:0 auto;line-height:1.6}
-.hero__sub strong{color:#fff;font-weight:700}
+/* SINGLE BAR SECTION */
+.bar{background:var(--black);padding:56px 0;position:relative;overflow:hidden}
+.bar::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse, rgba(127,200,56,0.08) 0%, transparent 60%);pointer-events:none}
+.bar__inner{max-width:880px;margin:0 auto;padding:0 20px;position:relative;z-index:1;text-align:center}
 
-/* STEPS */
-.steps{background:var(--white);padding:80px 0}
-.steps__intro{text-align:center;max-width:700px;margin:0 auto 48px}
-.steps__intro h2{font-size:clamp(24px,3.5vw,36px);font-weight:900;letter-spacing:-.025em;color:var(--black);line-height:1.15;margin-bottom:16px}
-.steps__intro h2 em{font-style:normal;color:var(--green)}
-.steps__intro p{font-size:16px;color:var(--text-secondary);line-height:1.7}
+.badge{display:inline-flex;align-items:center;gap:10px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.25);color:var(--green);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:8px 20px;border-radius:30px;margin-bottom:22px}
+.badge::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
 
-.step-list{display:flex;flex-direction:column;gap:16px;max-width:720px;margin:0 auto}
-.step{display:flex;align-items:flex-start;gap:20px;background:var(--light);border:1px solid var(--border);border-radius:12px;padding:24px 26px;transition:transform .2s, border-color .2s}
-.step:hover{transform:translateY(-2px);border-color:rgba(127,200,56,0.4)}
-.step__num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--green);color:#000;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center}
-.step__body h3{font-size:17px;font-weight:800;color:var(--black);margin-bottom:6px;letter-spacing:-.01em}
-.step__body p{font-size:15px;color:var(--text-secondary);line-height:1.6}
+h1{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:14px}
+h1 em{font-style:normal;color:var(--green)}
 
-/* CALLOUT */
-.callout{max-width:720px;margin:40px auto 0;background:rgba(127,200,56,0.08);border:1px solid rgba(127,200,56,0.3);border-left:4px solid var(--green);border-radius:10px;padding:22px 26px}
-.callout p{font-size:15px;color:var(--text);line-height:1.65}
-.callout strong{color:var(--black);font-weight:800}
+.sub{font-size:16px;color:#bbb;font-weight:500;max-width:560px;margin:0 auto 36px;line-height:1.55}
+.sub strong{color:#fff;font-weight:700}
 
-/* OUTRO */
-.outro{text-align:center;padding:56px 0 80px;background:var(--white)}
-.outro h2{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-.025em;color:var(--black);line-height:1.2}
-.outro h2 em{font-style:normal;color:var(--green)}
-.outro p{font-size:15px;color:var(--text-secondary);margin-top:12px}
+.steps{display:flex;flex-direction:column;gap:12px;max-width:620px;margin:0 auto 26px;text-align:left}
+.step{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:16px 20px;transition:border-color .2s, background .2s}
+.step:hover{border-color:rgba(127,200,56,0.35);background:rgba(127,200,56,0.04)}
+.step__num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--green);color:#000;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step__text{font-size:15px;font-weight:600;color:#fff;letter-spacing:-.005em}
+
+.note{max-width:620px;margin:0 auto;font-size:14px;color:#999;line-height:1.55}
+.note strong{color:var(--green);font-weight:800}
 
 /* FOOTER */
-.footer{background:var(--black);padding:40px 0;text-align:center}
-.footer img{height:40px;display:inline-block;margin:0 auto}
-.footer p{color:#777;font-size:13px;margin-top:14px}
+.footer{padding:28px 0;text-align:center;border-top:1px solid var(--border)}
+.footer img{height:32px;display:inline-block}
+.footer p{color:#666;font-size:12px;margin-top:10px}
 
 @media (max-width:768px) {
-  .hero{padding:64px 0 52px}
-  .steps{padding:60px 0}
-  .step{padding:20px}
-  .step__num{width:36px;height:36px;font-size:15px}
-  .outro{padding:40px 0 64px}
+  .bar{padding:44px 0}
+  .step{padding:14px 16px;gap:14px}
+  .step__num{width:28px;height:28px;font-size:13px}
+  .step__text{font-size:14px}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero__badge" data-reveal>Payment Confirmed</div>
+<section class="bar">
+  <div class="bar__inner">
+    <div class="badge" data-reveal>Payment Confirmed</div>
     <h1 data-reveal>Welcome To <em>Physique Academy</em></h1>
-    <p class="hero__sub" data-reveal><strong>One last step</strong> before your coach is assigned.</p>
-  </div>
-</section>
+    <p class="sub" data-reveal><strong>One last step</strong> before your coach is assigned.</p>
 
-<!-- STEPS -->
-<section class="steps">
-  <div class="container">
-
-    <div class="steps__intro" data-reveal>
-      <h2>Scroll Down To <em>Finish Onboarding</em></h2>
-    </div>
-
-    <div class="step-list">
+    <div class="steps">
       <div class="step" data-reveal>
         <div class="step__num">1</div>
-        <div class="step__body">
-          <h3>Sign &amp; submit your coaching agreement</h3>
-        </div>
+        <div class="step__text">Sign &amp; submit your coaching agreement</div>
       </div>
       <div class="step" data-reveal>
         <div class="step__num">2</div>
-        <div class="step__body">
-          <h3>Complete your lifestyle &amp; onboarding questions</h3>
-        </div>
+        <div class="step__text">Complete your lifestyle &amp; onboarding questions</div>
       </div>
     </div>
 
-    <div class="callout" data-reveal>
-      <p>Your coach <strong>can't be assigned</strong> until this is done. Finish it now and you're ready to train.</p>
-    </div>
-
+    <p class="note" data-reveal>Scroll down to finish both steps. <strong>Your coach can't be assigned until this is done.</strong></p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <img src="https://physique-academy.s3.amazonaws.com/general/PA-Logo-Green-White.png" alt="Physique Academy">
-    <p>&copy; Physique Academy. All rights reserved.</p>
-  </div>
+  <img src="https://physique-academy.s3.amazonaws.com/general/PA-Logo-Green-White.png" alt="Physique Academy">
+  <p>&copy; Physique Academy. All rights reserved.</p>
 </footer>
 
 <script>
