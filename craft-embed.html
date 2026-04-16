@@ -1,0 +1,206 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Override Craft CMS Width Constraints -->
+<style>
+.craft-content-wrapper,
+.craft-field-wrapper,
+.craft-redactor-field,
+.craft-matrix-block,
+.craft-entry-content,
+.content-wrapper,
+.field-wrapper,
+.redactor-field,
+.matrix-block,
+.entry-content {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body .craft-content-wrapper *,
+body .craft-field-wrapper *,
+body .content-wrapper * {
+    max-width: none !important;
+}
+
+.pa-order-confirmation {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    position: relative !important;
+}
+
+.pa-order-confirmation {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+    --green: #7FC838;
+    --green-dark: #7FC838;
+    --black: #0a0a0a;
+    --white: #fff;
+    --gray: #666;
+    --light: #f7f8fa;
+    --border: #e5e7eb;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+}
+
+.pa-order-confirmation .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Targeted resets (avoid blanket * reset — breaks third-party widgets) */
+.pa-order-confirmation .hero,
+.pa-order-confirmation .hero *,
+.pa-order-confirmation .steps,
+.pa-order-confirmation .steps *,
+.pa-order-confirmation .outro,
+.pa-order-confirmation .outro *,
+.pa-order-confirmation .footer,
+.pa-order-confirmation .footer *{
+    box-sizing:border-box;
+}
+
+/* SCROLL REVEAL */
+.pa-order-confirmation [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+.pa-order-confirmation [data-reveal].visible{opacity:1;transform:none}
+
+/* HERO */
+.pa-order-confirmation .hero{background:var(--black);padding:72px 0 60px;text-align:center;position:relative;overflow:hidden;margin:0}
+.pa-order-confirmation .hero::before{content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);width:1000px;height:700px;background:radial-gradient(ellipse, rgba(127,200,56,0.08) 0%, transparent 60%);pointer-events:none}
+.pa-order-confirmation .hero .container{position:relative;z-index:1}
+.pa-order-confirmation .hero__badge{display:inline-flex;align-items:center;gap:10px;background:rgba(127,200,56,0.1);border:1px solid rgba(127,200,56,0.25);color:var(--green);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:10px 24px;border-radius:30px;margin:0 0 32px 0}
+.pa-order-confirmation .hero__badge::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
+.pa-order-confirmation .hero h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;line-height:1.1;letter-spacing:-.035em;color:#fff;margin:0 0 20px 0;padding:0}
+.pa-order-confirmation .hero h1 em{font-style:normal;color:var(--green)}
+.pa-order-confirmation .hero__sub{font-size:17px;color:#bbb;font-weight:500;max-width:640px;margin:0 auto;line-height:1.6;padding:0}
+.pa-order-confirmation .hero__sub strong{color:#fff;font-weight:700}
+
+/* STEPS */
+.pa-order-confirmation .steps{background:var(--white);padding:72px 0;margin:0}
+.pa-order-confirmation .steps__intro{text-align:center;max-width:700px;margin:0 auto 48px}
+.pa-order-confirmation .steps__intro h2{font-size:clamp(24px,3.5vw,36px);font-weight:900;letter-spacing:-.025em;color:var(--black);line-height:1.15;margin:0 0 16px 0;padding:0}
+.pa-order-confirmation .steps__intro h2 em{font-style:normal;color:var(--green)}
+.pa-order-confirmation .steps__intro p{font-size:16px;color:var(--text-secondary);line-height:1.7;margin:0;padding:0}
+
+.pa-order-confirmation .step-list{display:flex;flex-direction:column;gap:16px;max-width:720px;margin:0 auto;padding:0}
+.pa-order-confirmation .step{display:flex;align-items:flex-start;gap:20px;background:var(--light);border:1px solid var(--border);border-radius:12px;padding:24px 26px;transition:transform .2s, border-color .2s;margin:0;list-style:none}
+.pa-order-confirmation .step:hover{transform:translateY(-2px);border-color:rgba(127,200,56,0.4)}
+.pa-order-confirmation .step__num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--green);color:#000;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0;padding:0}
+.pa-order-confirmation .step__body h3{font-size:17px;font-weight:800;color:var(--black);margin:0 0 6px 0;padding:0;letter-spacing:-.01em}
+.pa-order-confirmation .step__body p{font-size:15px;color:var(--text-secondary);line-height:1.6;margin:0;padding:0}
+
+/* CALLOUT */
+.pa-order-confirmation .callout{max-width:720px;margin:40px auto 0;background:rgba(127,200,56,0.08);border:1px solid rgba(127,200,56,0.3);border-left:4px solid var(--green);border-radius:10px;padding:22px 26px}
+.pa-order-confirmation .callout p{font-size:15px;color:var(--text);line-height:1.65;margin:0}
+.pa-order-confirmation .callout strong{color:var(--black);font-weight:800}
+
+/* OUTRO */
+.pa-order-confirmation .outro{text-align:center;padding:56px 0 72px;background:var(--white);margin:0}
+.pa-order-confirmation .outro h2{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-.025em;color:var(--black);line-height:1.2;margin:0;padding:0}
+.pa-order-confirmation .outro h2 em{font-style:normal;color:var(--green)}
+.pa-order-confirmation .outro p{font-size:15px;color:var(--text-secondary);margin:12px 0 0 0;padding:0}
+
+/* FOOTER */
+.pa-order-confirmation .footer{background:var(--black);padding:40px 0;text-align:center;margin:0}
+.pa-order-confirmation .footer img{height:40px;display:inline-block;margin:0 auto}
+.pa-order-confirmation .footer p{color:#777;font-size:13px;margin:14px 0 0 0;padding:0}
+
+@media (max-width:768px) {
+  .pa-order-confirmation .hero{padding:56px 0 48px}
+  .pa-order-confirmation .steps{padding:56px 0}
+  .pa-order-confirmation .step{padding:20px}
+  .pa-order-confirmation .step__num{width:36px;height:36px;font-size:15px}
+  .pa-order-confirmation .outro{padding:40px 0 56px}
+}
+</style>
+
+<div class="pa-order-confirmation">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge" data-reveal>Payment Confirmed</div>
+      <h1 data-reveal>Welcome To The Academy. <br><em>Your Journey Starts Now.</em></h1>
+      <p class="hero__sub" data-reveal>There's <strong>one final step</strong> before a coach can be assigned and your programme can begin.</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps">
+    <div class="container">
+
+      <div class="steps__intro" data-reveal>
+        <h2>Scroll Down And <em>Finish Your Onboarding</em></h2>
+        <p>The more your coach knows about you, your goals, your schedule, your habits, the sharper your plan will be from day one.</p>
+      </div>
+
+      <div class="step-list">
+        <div class="step" data-reveal>
+          <div class="step__num">1</div>
+          <div class="step__body">
+            <h3>Sign &amp; submit your coaching agreement</h3>
+            <p>Scroll to the bottom of this page, read it over, then add your signature and submit.</p>
+          </div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step__num">2</div>
+          <div class="step__body">
+            <h3>Complete every lifestyle &amp; onboarding question</h3>
+            <p>Answer honestly. These details shape the programme your coach builds for you.</p>
+          </div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step__num">3</div>
+          <div class="step__body">
+            <h3>Get matched with your coach</h3>
+            <p>Once your answers are in, we'll pair you with the right coach and kick things off.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" data-reveal>
+        <p><strong>Don't put this off.</strong> Your coach cannot be assigned until every step above is complete. Finish it now while you've got the momentum, and you'll be fully set up and ready to train.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="container">
+      <h2 data-reveal>Let's Get To <em>Work.</em></h2>
+      <p data-reveal>Scroll down to begin.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <img src="https://physique-academy.s3.amazonaws.com/general/PA-Logo-Green-White.png" alt="Physique Academy">
+      <p>&copy; Physique Academy. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.pa-order-confirmation [data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
